@@ -2,7 +2,7 @@ import { inject, Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable, catchError, map, tap, of } from 'rxjs';
 
-// ✅ Interfaces tipadas correctamente
+
 export interface Character {
   id: number;
   name: string;
@@ -44,13 +44,13 @@ export class RickMortyApiService {
   }): Observable<ApiResponse> {
     let httpParams = new HttpParams();
 
-    // ✅ Usa los métodos encadenados de forma limpia
+
     if (params?.name) httpParams = httpParams.set('name', params.name);
     if (params?.status) httpParams = httpParams.set('status', params.status);
     if (params?.gender) httpParams = httpParams.set('gender', params.gender);
     if (params?.page) httpParams = httpParams.set('page', params.page.toString());
 
-    // ✅ Usa { params: httpParams } correctamente
+
     return this.http.get<ApiResponse>(this.baseUrl, { params: httpParams }).pipe(
       tap(data => console.log(`✅ ${data.results.length} characters fetched`)),
       catchError(error => {
@@ -63,9 +63,7 @@ export class RickMortyApiService {
     );
   }
 
-  /**
-   * Obtiene un personaje por su ID
-   */
+
   getCharacter(id: number): Observable<Character | null> {
     return this.http.get<Character>(`${this.baseUrl}/${id}`).pipe(
       tap(character => console.log(`👤 Character fetched: ${character.name}`)),
