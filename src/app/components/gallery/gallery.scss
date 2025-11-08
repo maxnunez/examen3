@@ -1,0 +1,51 @@
+.nav-link.active {
+  background-color: #dc3545;
+  color: white;
+}
+.card {
+  transition: transform 0.2s;
+}
+.card:hover {
+  transform: scale(1.02);
+}
+.masonry-grid {
+  column-count: 4;
+  column-gap: 1rem;
+}
+.masonry-card {
+  display: inline-block;
+  margin-bottom: 1rem;
+  width: 100%;
+}
+.timeline {
+  position: relative;
+  margin: 2rem auto;
+  padding: 1rem 0;
+  width: 80%;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  width: 3px;
+  background: #dc3545;
+  top: 0;
+  bottom: 0;
+}
+.timeline-item {
+  position: relative;
+  width: 45%;
+  padding: 1rem;
+}
+.timeline-item.me-auto {
+  left: 0;
+}
+.timeline-item.ms-auto {
+  left: 55%;
+}
+.timeline-content {
+  border: 1px solid #dee2e6;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 1rem;
+}
