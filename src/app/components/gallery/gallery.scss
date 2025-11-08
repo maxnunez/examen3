@@ -49,3 +49,41 @@
   background-color: #fff;
   padding: 1rem;
 }
+.timeline {
+  position: relative;
+  margin: 2rem 0;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.timeline-item {
+  position: relative;
+  width: 100%;
+}
+
+.timeline-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  background-color: #dee2e6; /* línea central */
+  transform: translateX(-50%);
+  z-index: 0;
+}
+
+.timeline-content {
+  width: 45%;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .timeline-item {
+    flex-direction: column !important;
+  }
+  .timeline-content {
+    width: 90%;
+    margin: 0 auto;
+  }
+}

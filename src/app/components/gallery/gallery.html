@@ -227,7 +227,8 @@
 
       <!-- 8. Timeline -->
       @case (8) {
-        <div class="timeline">
+
+        <div class="timeline ">
           @for (char of characters(); track char.id; let i = $index) {
             <div class="timeline-item {{ i % 2 === 0 ? 'me-auto' : 'ms-auto' }}">
               <div class="timeline-content card shadow-sm">

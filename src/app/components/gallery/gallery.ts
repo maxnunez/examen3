@@ -87,4 +87,6 @@ export class GalleryComponent {
     const target = event.target as HTMLImageElement;
     target.src = `https://via.placeholder.com/120x120/6c757d/ffffff?text=${name.charAt(0)}`;
   }
+
+
 }
